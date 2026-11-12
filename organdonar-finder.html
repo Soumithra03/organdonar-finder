@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrganCare - Donor & Finder</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f8fc;
+            color: #26344a;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px #ddd;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            color: #e63946;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #26344a;
+            margin: 0 12px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #e63946;
+        }
+
+        .hero {
+            background: linear-gradient(120deg, #173b68, #2876a8);
+            color: white;
+            padding: 90px 8%;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #e63946;
+            color: white;
+            padding: 13px 25px;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background: #c82333;
+        }
+
+        section {
+            padding: 60px 8%;
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 30px;
+            color: #173b68;
+        }
+
+        .about {
+            text-align: center;
+            line-height: 1.8;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #ddd;
+        }
+
+        .card h3 {
+            color: #e63946;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            line-height: 1.6;
+        }
+
+        .form-box {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #ddd;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 13px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        .form-box button {
+            width: 100%;
+            margin-top: 12px;
+        }
+
+        #results {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .result-card {
+            background: white;
+            padding: 22px;
+            border-radius: 10px;
+            border-left: 5px solid #e63946;
+            box-shadow: 0 3px 10px #ddd;
+            line-height: 1.8;
+        }
+
+        .result-card h3 {
+            color: #173b68;
+        }
+
+        .notice {
+            background: #fff3cd;
+            color: #664d03;
+            padding: 15px;
+            border-radius: 7px;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: #173b68;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            line-height: 1.8;
+        }
+
+        @media(max-width: 600px) {
+            header {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 7px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="logo">❤️ OrganCare</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#donate">Register</a>
+            <a href="#finder">Find Organ</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Home -->
+    <section class="hero" id="home">
+        <h1>Give Life, Save Lives</h1>
+        <p>One organ donor can help save multiple lives.</p>
+
+        <a href="#donate" class="btn">Become a Donor</a>
+        <a href="#finder" class="btn">Find an Organ</a>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <h2 class="heading">About Organ Donation</h2>
+
+        <div class="about">
+            <p>
+                Organ donation is the process of donating healthy organs
+                to people who need them for medical treatment.
+                It can give another person a chance at life.
+                Our website is a student project designed to spread
+                awareness about organ donation and demonstrate
+                a donor information search system.
+            </p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h3>❤️ Heart</h3>
+                <p>Heart donation can help patients with serious heart conditions.</p>
+            </div>
+
+            <div class="card">
+                <h3>🫘 Kidney</h3>
+                <p>Kidney transplantation can help people with kidney failure.</p>
+            </div>
+
+            <div class="card">
+                <h3>🫁 Lungs</h3>
+                <p>Lung transplantation may help people with severe lung diseases.</p>
+            </div>
+
+            <div class="card">
+                <h3>🧬 Liver</h3>
+                <p>Liver transplantation can help patients with serious liver disease.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donor Registration -->
+    <section id="donate">
+        <h2 class="heading">Donor Registration</h2>
+
+        <div class="form-box">
+            <form id="donorForm">
+
+                <input type="text" id="name"
+                    placeholder="Enter Your Name" required>
+
+                <input type="number" id="age"
+                    placeholder="Enter Your Age" min="18" max="100" required>
+
+                <select id="organ" required>
+                    <option value="">Select Organ</option>
+                    <option value="Kidney">Kidney</option>
+                    <option value="Liver">Liver</option>
+                    <option value="Heart">Heart</option>
+                    <option value="Lungs">Lungs</option>
+                    <option value="Cornea">Cornea</option>
+                </select>
+
+                <input type="text" id="city"
+                    placeholder="Enter Your City" required>
+
+                <button type="submit" class="btn">
+                    Submit Registration
+                </button>
+            </form>
+
+            <p class="notice">
+                Student project demo only. This form does not create
+                a legal organ donor registration. Actual donor registration
+                must be completed through authorized official channels.
+            </p>
+
+            <p id="message"></p>
+        </div>
+    </section>
+
+    <!-- Organ Finder -->
+    <section id="finder">
+        <h2 class="heading">Find an Organ Donor</h2>
+
+        <div class="form-box">
+
+            <select id="searchOrgan">
+                <option value="">Select Required Organ</option>
+                <option value="Kidney">Kidney</option>
+                <option value="Liver">Liver</option>
+                <option value="Heart">Heart</option>
+                <option value="Lungs">Lungs</option>
+                <option value="Cornea">Cornea</option>
+            </select>
+
+            <input type="text" id="searchCity"
+                placeholder="Enter City">
+
+            <button class="btn" onclick="findOrgan()">
+                Search Donors
+            </button>
+
+        </div>
+
+        <div id="results"></div>
+
+        <p class="notice">
+            The names and listings displayed below are fictional sample
+            data for demonstrating the website. They are not real donor
+            records or verified organ availability. Organ allocation and
+            compatibility must be handled by authorized transplant teams.
+        </p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2 class="heading">Contact Us</h2>
+
+        <div class="about">
+            <p><b>Website:</b> OrganCare - Organ Donor & Finder</p>
+            <p><b>Email:</b> organ care@example.com</p>
+            <p><b>Purpose:</b> Organ Donation Awareness Project</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 OrganCare Website</p>
+        <p>Give Hope. Save Lives. Spread Awareness.</p>
+    </footer>
+
+    <script>
+
+        // Sample data for website demonstration only
+        const donors = [
+            {
+                name: "Arun",
+                age: 25,
+                organ: "Kidney",
+                city: "Chennai"
+            },
+            {
+                name: "Priya",
+                age: 28,
+                organ: "Liver",
+                city: "Coimbatore"
+            },
+            {
+                name: "Kumar",
+                age: 30,
+                organ: "Heart",
+                city: "Chennai"
+            },
+            {
+                name: "Divya",
+                age: 24,
+                organ: "Cornea",
+                city: "Madurai"
+            },
+            {
+                name: "Rahul",
+                age: 32,
+                organ: "Lungs",
+                city: "Salem"
+            }
+        ];
+
+        // Donor registration demo
+        document.getElementById("donorForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            let age = Number(document.getElementById("age").value);
+
+            if (age < 18 || age > 100) {
+                document.getElementById("message").innerText =
+                    "Please enter a valid age (18 to 100).";
+                return;
+            }
+
+            document.getElementById("message").innerText =
+                "Demo submitted successfully! This is not an official donor registration.";
+
+            this.reset();
+        });
+
+        // Organ search
+        function findOrgan() {
+
+            let organ = document.getElementById("searchOrgan").value;
+            let city = document.getElementById("searchCity")
+                .value.trim().toLowerCase();
+
+            let results = document.getElementById("results");
+
+            results.innerHTML = "";
+
+            if (organ === "") {
+                results.innerHTML = "<p>Please select an organ.</p>";
+                return;
+            }
+
+            let found = donors.filter(function(donor) {
+                return donor.organ === organ &&
+                    (city === "" || donor.city.toLowerCase() === city);
+            });
+
+            if (found.length === 0) {
+                results.innerHTML =
+                    "<p>No sample records found. Try another city or organ.</p>";
+                return;
+            }
+
+            found.forEach(function(donor) {
+
+                results.innerHTML += `
+                    <div class="result-card">
+                        <h3>${donor.name}</h3>
+                        <p><b>Age:</b> ${donor.age}</p>
+                        <p><b>Organ:</b> ${donor.organ}</p>
+                        <p><b>City:</b> ${donor.city}</p>
+                        <p><b>Status:</b> Sample Record</p>
+                    </div>
+                `;
+
+            });
+        }
+
+    </script>
+
+</body>
+</html>
+S
